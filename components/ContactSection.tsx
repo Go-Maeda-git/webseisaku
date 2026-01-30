@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { ArrowRight, Phone, Mail, MessageCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const ContactSection: React.FC = () => {
     const [formData, setFormData] = useState({
@@ -63,77 +63,20 @@ const ContactSection: React.FC = () => {
         }
     };
 
-    const contactMethods = [
-        {
-            icon: <MessageCircle className="w-6 h-6" />,
-            title: "LINE",
-            description: "気軽にチャット",
-            href: "https://line.me",
-            color: "text-green-500",
-            bgColor: "bg-green-50",
-        },
-        {
-            icon: <MessageCircle className="w-6 h-6" />,
-            title: "Chatwork",
-            description: "ビジネスチャット",
-            href: "#",
-            color: "text-red-500",
-            bgColor: "bg-red-50",
-        },
-        {
-            icon: <Mail className="w-6 h-6" />,
-            title: "メール",
-            description: "24時間受付",
-            href: "mailto:info@easyweb.jp",
-            color: "text-amber-500",
-            bgColor: "bg-amber-50",
-        },
-        {
-            icon: <Phone className="w-6 h-6" />,
-            title: "電話",
-            description: "直接お話し",
-            href: "tel:000-0000-0000",
-            color: "text-pink-500",
-            bgColor: "bg-pink-50",
-        },
-    ];
-
     return (
         <section
             id="contact"
-            className="py-20 lg:py-32 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden"
+            className="py-20 lg:py-32 bg-gradient-to-b from-slate-50 to-white"
         >
-            {/* Background decoration */}
-            <div className="absolute inset-0 overflow-hidden">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gradient-radial from-blue-100/50 to-transparent rounded-full blur-3xl"></div>
-            </div>
-
-            <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section header */}
-                <div className="text-center mb-12 lg:mb-16">
+                <div className="text-center mb-12">
                     <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
-                        すべてオンラインで完結
+                        お問い合わせ
                     </h2>
                     <p className="text-lg text-slate-600">
-                        対面は不要。お好きな方法でご連絡ください。
+                        まずはお気軽にご相談ください
                     </p>
-                </div>
-
-                {/* Contact Methods Grid */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 max-w-4xl mx-auto mb-16">
-                    {contactMethods.map((method, index) => (
-                        <a
-                            key={index}
-                            href={method.href}
-                            className="group bg-white rounded-2xl p-6 shadow-sm border border-slate-100 hover:shadow-lg hover:border-slate-200 transition-all duration-300 text-center"
-                        >
-                            <div className={`inline-flex items-center justify-center w-14 h-14 ${method.bgColor} ${method.color} rounded-2xl mb-4 group-hover:scale-110 transition-transform`}>
-                                {method.icon}
-                            </div>
-                            <h3 className="font-bold text-slate-900 mb-1">{method.title}</h3>
-                            <p className="text-sm text-slate-500">{method.description}</p>
-                        </a>
-                    ))}
                 </div>
 
                 {/* Contact Form */}
